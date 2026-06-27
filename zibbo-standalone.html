@@ -3604,7 +3604,7 @@ html, body { height: 100%; margin: 0; padding: 0; background: transparent; overf
             <button class=&quot;zc-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; data-tab=&quot;FEED&quot;>FEED</button>
             <button class=&quot;zc-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; data-tab=&quot;BAG&quot;>BAG</button>
             <button class=&quot;zc-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; data-tab=&quot;WARDROBE&quot;>WARDROBE</button>
-            <button class=&quot;zc-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; data-tab=&quot;ACCOUNT&quot;>ACCOUNT</button>
+            <button class=&quot;zc-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; data-tab=&quot;ACCOUNT&quot;>GOOGLE LOGIN</button>
           </nav>
 
           <!-- swappable content area -->
@@ -4194,7 +4194,7 @@ const STAGE_THRESHOLDS = [
   { name: 'ELDER',     floor: 4000000 },
 ];
 
-let ACCOUNT_URL = 'https://whatnot.com/'; // external page (engineering-owned)
+let ACCOUNT_URL = 'https://accounts.google.com/'; // external page (engineering-owned)
 
 const BAG_SLOTS = 20;
 // placeholder slot states only — item catalog / acquisition is out of scope
@@ -7781,7 +7781,7 @@ boot();
                   <button class="onb-ctab on" onclick="onbConsoleTab('status',this)">Status</button>
                   <button class="onb-ctab" onclick="onbConsoleTab('feed',this)">Feed</button>
                   <button class="onb-ctab" onclick="onbConsoleTab('hardware',this)">Hardware</button>
-                  <button class="onb-ctab" onclick="onbConsoleTab('account',this)">Account</button>
+                  <button class="onb-ctab" onclick="onbConsoleTab('account',this)">Google Login</button>
                 </div>
                 <div class="onb-cbody" id="onb-console-body">
                   <div class="onb-crow"><span>STAGE</span><span class="v">SPARK · 01</span></div>
