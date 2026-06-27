@@ -1,0 +1,26 @@
+steps:
+  # 步骤 1: 构建 Docker 镜像
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/zibbo/zibbo-app:$COMMIT_SHA', '.']
+
+  # 步骤 2: 推送镜像到 Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/zibbo/zibbo-app:$COMMIT_SHA']
+
+  # 步骤 3: 将容器部署到 Cloud Run (轻量级托管 Web 服务)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'zibbo-service'
+      - '--image'
+      - 'gcr.io/zibbo/zibbo-app:$COMMIT_SHA'
+      - '--region'
+      - 'asia-northeast1'  # 部署区域：东京 (Tokyo)
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+
+images:
+  - 'gcr.io/zibbo/zibbo-app:$COMMIT_SHA'
